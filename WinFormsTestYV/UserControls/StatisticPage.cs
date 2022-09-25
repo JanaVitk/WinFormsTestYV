@@ -39,7 +39,7 @@ namespace WinFormsTestYV.UserControls
             ClientReport report = new ClientReport();
             report.DataSource = DataSource.OrderItems;
             report.Parameters["Client"].Value = 1;
-            report.ob
+          
             report.Parameters["End"].Value = DateTime.Now;
             ReportPrintTool rpt = new ReportPrintTool(report);
             rpt.ShowPreviewDialog();

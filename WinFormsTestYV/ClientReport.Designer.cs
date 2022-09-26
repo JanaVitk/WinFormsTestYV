@@ -32,10 +32,12 @@ namespace WinFormsTestYV
             this.components = new System.ComponentModel.Container();
             DevExpress.DataAccess.ObjectBinding.ObjectConstructorInfo objectConstructorInfo1 = new DevExpress.DataAccess.ObjectBinding.ObjectConstructorInfo();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
-            this.Start = new DevExpress.XtraReports.Parameters.Parameter();
-            this.End = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -44,6 +46,8 @@ namespace WinFormsTestYV
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.Start = new DevExpress.XtraReports.Parameters.Parameter();
+            this.End = new DevExpress.XtraReports.Parameters.Parameter();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -53,10 +57,6 @@ namespace WinFormsTestYV
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -79,6 +79,50 @@ namespace WinFormsTestYV
             this.TopMargin.HeightF = 51.04167F;
             this.TopMargin.Name = "TopMargin";
             // 
+            // xrLabel4
+            // 
+            this.xrLabel4.CanShrink = true;
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(419.7918F, 10.00001F);
+            this.xrLabel4.Multiline = true;
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel4.Text = "до";
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.CanShrink = true;
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(203.125F, 10.00001F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel3.Text = "Период от";
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?Start")});
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(303.125F, 10.00001F);
+            this.xrLabel2.Multiline = true;
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel2.Text = "xrLabel2";
+            this.xrLabel2.TextFormatString = "{0:d}";
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?End")});
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(539.9999F, 10.00001F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel1.Text = "xrLabel1";
+            this.xrLabel1.TextFormatString = "{0:d}";
+            // 
             // BottomMargin
             // 
             this.BottomMargin.Name = "BottomMargin";
@@ -89,20 +133,6 @@ namespace WinFormsTestYV
             this.xrTable1});
             this.Detail.HeightF = 27.08333F;
             this.Detail.Name = "Detail";
-            // 
-            // Start
-            // 
-            this.Start.Description = "От";
-            this.Start.Name = "Start";
-            this.Start.Type = typeof(System.DateTime);
-            this.Start.ValueInfo = "2022-09-25";
-            // 
-            // End
-            // 
-            this.End.Description = "До";
-            this.End.Name = "End";
-            this.End.Type = typeof(System.DateTime);
-            this.End.ValueInfo = "2022-09-25";
             // 
             // xrTable1
             // 
@@ -182,6 +212,20 @@ namespace WinFormsTestYV
             this.xrTableCell11.Text = "xrTableCell11";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell11.Weight = 0.66666666666666663D;
+            // 
+            // Start
+            // 
+            this.Start.Description = "От";
+            this.Start.Name = "Start";
+            this.Start.Type = typeof(System.DateTime);
+            this.Start.ValueInfo = "2022-09-25";
+            // 
+            // End
+            // 
+            this.End.Description = "До";
+            this.End.Name = "End";
+            this.End.Type = typeof(System.DateTime);
+            this.End.ValueInfo = "2022-09-25";
             // 
             // PageHeader
             // 
@@ -263,50 +307,6 @@ namespace WinFormsTestYV
             this.xrTableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrTableCell7.Weight = 0.74074008430851168D;
             // 
-            // xrLabel1
-            // 
-            this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?End")});
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(539.9999F, 10.00001F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel1.Text = "xrLabel1";
-            this.xrLabel1.TextFormatString = "{0:d}";
-            // 
-            // xrLabel2
-            // 
-            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?Start")});
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(303.125F, 10.00001F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel2.Text = "xrLabel2";
-            this.xrLabel2.TextFormatString = "{0:d}";
-            // 
-            // xrLabel3
-            // 
-            this.xrLabel3.CanShrink = true;
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(203.125F, 10.00001F);
-            this.xrLabel3.Multiline = true;
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel3.Text = "Период от";
-            // 
-            // xrLabel4
-            // 
-            this.xrLabel4.CanShrink = true;
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(419.7918F, 10.00001F);
-            this.xrLabel4.Multiline = true;
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel4.Text = "до";
-            // 
             // GroupFooter1
             // 
             this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -357,6 +357,7 @@ namespace WinFormsTestYV
             this.objectDataSource1,
             this.bindingSource2});
             this.DataSource = this.bindingSource2;
+            this.FilterString = "Iif([Order.Date] >= ?Start And [Order.Date] <= ?End, True, False)";
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(100, 100, 51, 100);
             this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {

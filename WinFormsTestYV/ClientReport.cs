@@ -12,6 +12,5 @@ namespace WinFormsTestYV
         {
             InitializeComponent();
         }
-
     }
 }

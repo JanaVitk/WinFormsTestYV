@@ -1,15 +1,6 @@
-﻿using DevExpress.Mvvm;
-using DevExpress.Utils.MVVM.Services;
-using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsTestYV.Models;
 
@@ -67,7 +58,7 @@ namespace WinFormsTestYV.UserControls
         private void viewClient_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
             object id = viewClient.GetRowCellValue(viewClient.FocusedRowHandle, "ID");
-            
+
             if (UsedClientEvent != null && id != null)
                 editBtns.SetDeleteButtonEnabled(!UsedClientEvent((long)id));
         }

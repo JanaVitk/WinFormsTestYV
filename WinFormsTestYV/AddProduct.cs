@@ -6,7 +6,7 @@ namespace WinFormsTestYV
 {
     public partial class AddProduct : DevExpress.XtraEditors.XtraForm
     {
-        public Product Product{get; private set;}
+        public Product Product { get; private set; }
         public AddProduct()
         {
             InitializeComponent();

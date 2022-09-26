@@ -1,12 +1,4 @@
-﻿using DevExpress.Utils.MVVM;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace WinFormsTestYV.UserControls
@@ -18,11 +10,11 @@ namespace WinFormsTestYV.UserControls
 
         public EditButtons()
         {
-            InitializeComponent();           
+            InitializeComponent();
             DeleteButton.Enabled = false;
         }
 
-        public void SetDeleteButtonEnabled(bool enabled) 
+        public void SetDeleteButtonEnabled(bool enabled)
         {
             DeleteButton.Enabled = enabled;
         }

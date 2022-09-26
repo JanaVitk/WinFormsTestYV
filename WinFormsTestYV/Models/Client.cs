@@ -1,7 +1,4 @@
-﻿
-
-using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 
@@ -14,7 +11,7 @@ namespace WinFormsTestYV.Models
         {
             ID = nextId++;
         }
-       
+
         [ReadOnly(true)]
         [Key, Display(AutoGenerateField = false)]
         public long ID { private set; get; }
@@ -22,7 +19,7 @@ namespace WinFormsTestYV.Models
         string name;
         [Required(ErrorMessage = "Укажите имя")]
         [DisplayName("Имя")]
-        public string Name 
+        public string Name
         {
             get => name;
             set
@@ -55,7 +52,7 @@ namespace WinFormsTestYV.Models
         [Required(ErrorMessage = "Укажите телефон")]
         [DataType(DataType.PhoneNumber)]
         [DisplayName("Телефон")]
-        public string Phone 
+        public string Phone
         {
             get => phone;
             set
@@ -72,7 +69,7 @@ namespace WinFormsTestYV.Models
         [ReadOnly(true)]
         [DataType(DataType.Currency)]
         [DisplayName("Сумма покупок")]
-        public decimal Sum 
+        public decimal Sum
         {
             get => sum;
             set

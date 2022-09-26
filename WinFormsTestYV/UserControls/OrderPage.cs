@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsTestYV.Data;
 using WinFormsTestYV.Models;
@@ -34,8 +27,8 @@ namespace WinFormsTestYV.UserControls
         private void gridViewOrder_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
             object id = gridViewOrder.GetRowCellValue(gridViewOrder.FocusedRowHandle, "ID");
-            
-            if ( id != null)
+
+            if (id != null)
                 editBtns.SetDeleteButtonEnabled(true);
         }
 
@@ -45,7 +38,7 @@ namespace WinFormsTestYV.UserControls
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 dlg.Order.setSumForClient += DataSource.SetSumClient;
-                foreach (var oi in dlg.Order.OrderItems) 
+                foreach (var oi in dlg.Order.OrderItems)
                 {
                     oi.setSumForClient += DataSource.SetSumClientFromOrder;
                     oi.getPriceFromProduct += DataSource.GetPrice;
@@ -55,7 +48,7 @@ namespace WinFormsTestYV.UserControls
 
                     DataSource.OrderItems.Add(oi);
                 }
-                    
+
                 DataSource.Orders.Add(dlg.Order);
                 DataSource.SetSumClient(dlg.Order.ClientID);
                 gridViewOrder.RefreshData();
@@ -64,7 +57,7 @@ namespace WinFormsTestYV.UserControls
 
         public void DeleteButton_Click(object sender, EventArgs e)
         {
-            Order order =  gridViewOrder.GetRow(gridViewOrder.FocusedRowHandle) as Order;
+            Order order = gridViewOrder.GetRow(gridViewOrder.FocusedRowHandle) as Order;
 
             foreach (var oi in order.OrderItems)
                 DataSource.OrderItems.Remove(oi);

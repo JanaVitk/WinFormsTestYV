@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
@@ -36,11 +35,11 @@ namespace WinFormsTestYV.Models
                 {
                     orderId = value;
                     var oldId = orderId;
-                    if (setSumForClient != null) 
+                    if (setSumForClient != null)
                     {
                         setSumForClient(orderId);
                         setSumForClient(oldId);
-                    }  
+                    }
 
                     OnPropertyChanged();
                 }
@@ -60,7 +59,7 @@ namespace WinFormsTestYV.Models
                 {
                     long oldId = productID;
                     productID = value;
-                    if(getPriceFromProduct != null &&
+                    if (getPriceFromProduct != null &&
                         (Price == 0 || oldId > 0))
                         Price = getPriceFromProduct(ProductID);
                     OnPropertyChanged();
@@ -80,7 +79,7 @@ namespace WinFormsTestYV.Models
                 if (count != value)
                 {
                     count = value;
-                    if(setSumForClient != null)
+                    if (setSumForClient != null)
                         setSumForClient(orderId);
                     OnPropertyChanged();
                 }
@@ -109,7 +108,7 @@ namespace WinFormsTestYV.Models
 
         public Client Client
         {
-            get 
+            get
             {
                 if (Order != null && getClient != null)
                     return getClient(Order.ClientID);
@@ -119,7 +118,8 @@ namespace WinFormsTestYV.Models
 
         public Product Product
         {
-            get {
+            get
+            {
                 if (getProduct != null)
                     return getProduct(ProductID);
                 return null;
@@ -128,7 +128,7 @@ namespace WinFormsTestYV.Models
 
         public Order Order
         {
-            get 
+            get
             {
                 if (getOrder != null)
                     return getOrder(OrderID);

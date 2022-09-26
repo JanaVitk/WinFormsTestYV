@@ -20,12 +20,12 @@ namespace WinFormsTestYV.Models
         public long ID { get; private set; }
 
         DateTime date { set; get; }
-        public DateTime DateAll 
+        public DateTime DateAll
         {
             get => date;
-            set 
+            set
             {
-                if (date != value) 
+                if (date != value)
                 {
                     date = value;
                     OnPropertyChanged("Date");
@@ -82,7 +82,7 @@ namespace WinFormsTestYV.Models
                 {
                     long oldId = clientID;
                     clientID = value;
-                    if (setSumForClient != null) 
+                    if (setSumForClient != null)
                     {
                         setSumForClient(clientID);
                         setSumForClient(oldId);

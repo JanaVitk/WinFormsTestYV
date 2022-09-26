@@ -1,5 +1,4 @@
-﻿
-using WinFormsTestYV.Data;
+﻿using WinFormsTestYV.Data;
 using WinFormsTestYV.Models;
 using System.Windows.Forms;
 using System;
@@ -16,7 +15,7 @@ namespace WinFormsTestYV
         {
             _DS = _ds;
             Order = new Order();
-            
+
             InitializeComponent();
             clientBindingSource.DataSource = _DS.Clients;
             productBindingSource.DataSource = _DS.Products;
@@ -27,7 +26,7 @@ namespace WinFormsTestYV
 
         private void btnOk_Click(object sender, System.EventArgs e)
         {
-            if (Order.ClientID < 1) 
+            if (Order.ClientID < 1)
             {
                 MessageBox.Show("Выберите клиента", "Ошибка");
                 return;
@@ -52,7 +51,7 @@ namespace WinFormsTestYV
         private void ItemLookUpEdit_Products_EditValueChanged(object sender, EventArgs e)
         {
             object id = ((ChangingEventArgs)e).NewValue;
-            if (id is long) 
+            if (id is long)
             {
                 viewOrderItem.SetRowCellValue(
                 viewOrderItem.FocusedRowHandle,

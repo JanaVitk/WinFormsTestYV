@@ -1,10 +1,7 @@
 ﻿using DevExpress.Mvvm.Native;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WinFormsTestYV.Models;
 
 namespace WinFormsTestYV.Data
@@ -37,9 +34,9 @@ namespace WinFormsTestYV.Data
         public BindingList<Order> Orders = new BindingList<Order>();
         public BindingList<OrderItem> OrderItems = new BindingList<OrderItem>();
 
-        public DataSourceDefault() 
+        public DataSourceDefault()
         {
-           
+
             Order order = new Order()
             {
                 Date = DateTime.Now.AddDays(-5),
@@ -52,7 +49,7 @@ namespace WinFormsTestYV.Data
                 Count = 2,
                 Price = 40,
                 OrderID = order.ID,
-                ProductID = Products.FirstOrDefault().ID 
+                ProductID = Products.FirstOrDefault().ID
             };
             oi.getPriceFromProduct += GetPrice;
             oi.setSumForClient += SetSumClientFromOrder;
@@ -76,13 +73,13 @@ namespace WinFormsTestYV.Data
             return OrderItems.FirstOrDefault(e => e.ProductID == id) != null;
         }
 
-        public void SetSumClient(long idClient) 
+        public void SetSumClient(long idClient)
         {
             Client client = Clients.Where(e => e.ID == idClient).FirstOrDefault();
             if (client == null)
                 return;
             client.Sum = OrderItems
-                .Join(Orders, 
+                .Join(Orders,
                     orderI => orderI.OrderID,
                     order => order.ID,
                     (oi, o) => new { idClient = o.ClientID, count = oi.Count, price = oi.Price })
@@ -90,13 +87,13 @@ namespace WinFormsTestYV.Data
                 .Sum(o => o.count * o.price);
         }
 
-        public void SetSumClientFromOrder(long idOrder) 
+        public void SetSumClientFromOrder(long idOrder)
         {
             Order order = Orders.FirstOrDefault(o => o.ID == idOrder);
             if (order != null)
                 SetSumClient(order.ClientID);
         }
-        public decimal GetPrice(long idProduct) 
+        public decimal GetPrice(long idProduct)
         {
             Product product = Products
                 .Where(p => p.ID == idProduct)

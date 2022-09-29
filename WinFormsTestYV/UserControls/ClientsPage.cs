@@ -52,7 +52,7 @@ namespace WinFormsTestYV.UserControls
 
         public void DeleteButton_Click(object sender, EventArgs e)
         {
-            int test1 = 2;
+            int test1 = 0;
             viewClient.DeleteRow(viewClient.FocusedRowHandle);
         }
 
